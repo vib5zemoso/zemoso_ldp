@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+  }
+
+  .formbox{
+    background-color: aliceblue;
+    width: 400px;
+  }
+  label{
+    margin-left: 50px;
+  }
+  input[type*=submit]{
+    margin-left: 160px;
+  }
