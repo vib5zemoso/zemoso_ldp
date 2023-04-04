@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Score Counter</title>
+  </head>
+  <body>
+    <h1>Score Counter</h1>
+    <p>Local Score: <span id="localScore"></span></p>
+    <p>Session Score: <span id="sessionScore"></span></p>
+    <button id="incrementButton">Increment Score</button>
+    <button id="resetButton">Reset Scores</button>
+    <script>
+      // retrieve local and session scores from storage or set to 0 if not present
+      let localScore = localStorage.getItem("localScore") || 0;
+      let sessionScore = sessionStorage.getItem("sessionScore") || 0;
+
+      // display the scores on the page
+      document.getElementById("localScore").textContent = localScore;
+      document.getElementById("sessionScore").textContent = sessionScore;
+
+      // add event listener to the increment button
+      document.getElementById("incrementButton").addEventListener("click", () => {
+        // increment local and session scores
+        localScore++;
+        sessionScore++;
+
+        // store the scores in storage
+        localStorage.setItem("localScore", localScore);
+        sessionStorage.setItem("sessionScore", sessionScore);
+
+        // update the scores displayed on the page
+        document.getElementById("localScore").textContent = localScore;
+        document.getElementById("sessionScore").textContent = sessionScore;
+      });
+
+      // add event listener to the reset button
+      document.getElementById("resetButton").addEventListener("click", () => {
+        // reset local and session scores to 0
+        localScore = 0;
+        sessionScore = 0;
+
+        // remove the scores from storage
+        localStorage.removeItem("localScore");
+        sessionStorage.removeItem("sessionScore");
+
+        // update the scores displayed on the page
+        document.getElementById("localScore").textContent = localScore;
+        document.getElementById("sessionScore").textContent = sessionScore;
+      });
+    </script>
+  </body>
+</html>
