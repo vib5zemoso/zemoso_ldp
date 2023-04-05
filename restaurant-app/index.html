@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://assets-global.website-files.com/5e700f53a406cc1c7cd6a814/5ebbfdf1d49d55c15100f1cb_zemoso_logo256.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Restaurant - ZeMoSo</title>
+</head>
+
+<body>
+  <header>
+    <div class="title">
+      <h1>Restaurant Billing System by
+        <a href="https://www.zemosolabs.com/" id="zemoso" target="_blank">ZeMoSo</a>
+      </h1>
+    </div>
+  </header>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-head">
+        <span id="table-num"></span><span>| Order Details</span>
+      </div>
+      <div class="modal-table">
+        <table>
+          <thead>
+            <tr>
+              <td>S.no</td>
+              <td>Item</td>
+              <td>Price</td>
+              <td>Quantitiy</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="row">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><i class="fa fa-trash-o"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <p id="total"></p>
+        <p class="close-bill">CLOSE SESSION(GENERATE BILL)</p>
+      </div>
+    </div>
+  </div>
+  <hr style="border: 2px solid black">
+  <div class="main-content">
+
+    <!-- Table div here -->
+    <div class="table-content">
+      <div class="table-title">
+        <h2 id="table-head">Tables</h2>
+      </div>
+      <div class="search-bar-table">
+        <input type="text" id="search-table" onkeyup="searchTable()" placeholder="Search tables">
+      </div>
+      <div class="table" onclick="openModal(1)" ondragover="onDragOver(event)" ondrop="onDrop(event,1)">
+        <h2>Table 1</h2>
+        <br>
+        <p id="table1"></p>
+      </div>
+      <div class="table" onclick="openModal(2)" ondragover="onDragOver(event)" ondrop="onDrop(event,2)">
+        <h2>Table 2</h2>
+        <br>
+        <p id="table2"></p>
+      </div>
+      <div class="table" onclick="openModal(3)" ondragover="onDragOver(event)" ondrop="onDrop(event,3)">
+        <h2>Table 3</h2>
+        <br>
+        <p id="table3"></p>
+      </div>
+      <div class="table" onclick="openModal(4)" ondragover="onDragOver(event)" ondrop="onDrop(event,4)">
+        <h2>Table 4</h2>
+        <br>
+        <p id="table4"></p>
+      </div>
+    </div>
+    <hr style="border: 2px solid black">
+
+    <!-- Menu div here -->
+    <div class="menu-content">
+      <div class="menu-title">
+        <h2 id="menu-head">Menu</h2>
+      </div>
+      <div class="search-bar-menu">
+        <input type="text" id="search-menu" placeholder="Search menu by course by food" onkeyup="searchMenu()">
+      </div>
+      <div class="menu-list" id="menu-list-id">
+        <div class="menu" draggable="true" ondragstart=drag(event)>
+          <h2></h2>
+          <h3></h3>
+          <br>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script/menuList.js"></script>
+  <script src="./script/menuHandler.js"></script>
+  <script src="./script/tableList.js"></script>
+  <script src="./script/tableHandler.js"></script>
+</body>
+
+</html>
+
